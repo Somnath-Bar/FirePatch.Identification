@@ -1,0 +1,937 @@
+var imageCollection = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR"),
+    geometry = 
+    /* color: #ffc82d */
+    /* shown: false */
+    /* locked: true */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[77.58637794020399, 31.680445640698917],
+          [77.58637794020399, 28.795529345160123],
+          [81.15693458082899, 28.795529345160123],
+          [81.15693458082899, 31.680445640698917]]], null, false),
+    table = ee.FeatureCollection("users/somnathbar4/UK"),
+    burn = 
+    /* color: #98ff00 */
+    /* shown: false */
+    /* locked: true */
+    ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.3891682042622, 30.478562865717723],
+                  [78.39071315665478, 30.477379330240815],
+                  [78.39225810904736, 30.478821762185305],
+                  [78.39337390799756, 30.47963543231544],
+                  [78.39328807730908, 30.481114815128137],
+                  [78.39328807730908, 30.484036530132],
+                  [78.3917431249165, 30.485515846056106],
+                  [78.39097064872021, 30.48507205363974],
+                  [78.39049857993359, 30.483777647533614],
+                  [78.3902840032124, 30.481743546015476],
+                  [78.38985484977002, 30.479820356396534]]]),
+            {
+              "class": 1,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.45049108175613, 30.479547028824378],
+                  [78.45008338598586, 30.47895526886682],
+                  [78.45014775900222, 30.477808723712773],
+                  [78.45096315054275, 30.477401881863962],
+                  [78.4516927113948, 30.477716259805504],
+                  [78.45293725637771, 30.47777173816041],
+                  [78.4540530553279, 30.477938173035408],
+                  [78.45476115850784, 30.47880732831538],
+                  [78.455512177032, 30.478825820896606],
+                  [78.45641339926101, 30.47902923905824],
+                  [78.45658506063796, 30.479306626775465],
+                  [78.45654214529372, 30.479824415066208],
+                  [78.45626319555618, 30.48030521601299],
+                  [78.45583404211379, 30.48074903016382],
+                  [78.45540488867141, 30.480527123341336],
+                  [78.4550615659175, 30.480083308178784],
+                  [78.45523322729446, 30.47925114929524],
+                  [78.45469678549148, 30.479343611744692],
+                  [78.4542676320491, 30.479639490992795],
+                  [78.45409597067214, 30.480582600094387],
+                  [78.453709732574, 30.48152570005885],
+                  [78.45328057913162, 30.48202498457617],
+                  [78.45287288336135, 30.482635217730568],
+                  [78.45278705267287, 30.48200649260269],
+                  [78.45293725637771, 30.480249739101854],
+                  [78.45237935690261, 30.480009338788307],
+                  [78.4516927113948, 30.47967647583559]]]),
+            {
+              "class": 1,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.67813110902875, 30.427998991570785],
+                  [78.67768049791425, 30.427943484873627],
+                  [78.67765904024213, 30.42755493710913],
+                  [78.67738009050458, 30.427406918506037],
+                  [78.6774015481767, 30.426740832012825],
+                  [78.67783070161909, 30.426814841847776],
+                  [78.67815256670087, 30.42711088062609],
+                  [78.6780667360124, 30.42735141147197],
+                  [78.67823839738935, 30.427776964592617],
+                  [78.67868900850385, 30.427998991570785],
+                  [78.67903233125776, 30.42831352892478],
+                  [78.67937565401166, 30.428739077848263],
+                  [78.67989063814252, 30.42896110263658],
+                  [78.68036270692915, 30.42903511078703],
+                  [78.68023396089643, 30.429405150697153],
+                  [78.67989063814252, 30.429405150697153],
+                  [78.67926836565107, 30.42931264085123],
+                  [78.6789679582414, 30.428757579933244],
+                  [78.6786246354875, 30.428498550423974],
+                  [78.67830277040571, 30.428221018043594]]]),
+            {
+              "class": 1,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.59152638322564, 30.377464053347843],
+                  [78.59101139909478, 30.376834649953494],
+                  [78.59006726152154, 30.37679762609822],
+                  [78.58835064775201, 30.376686554448202],
+                  [78.58839356309625, 30.376242266586075],
+                  [78.58920895463677, 30.375946073556122],
+                  [78.59062516099664, 30.375909049364296],
+                  [78.5914834678814, 30.376020121897763],
+                  [78.59217011338922, 30.375575831006625],
+                  [78.59277092820855, 30.375168562582516],
+                  [78.59320008165093, 30.375205587054815],
+                  [78.59320008165093, 30.37564987962872],
+                  [78.5929425895855, 30.376279290651716]]]),
+            {
+              "class": 1,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.59526001817437, 30.381351455078615],
+                  [78.59680497056695, 30.38068505433426],
+                  [78.59637581712457, 30.381906785561153]]]),
+            {
+              "class": 1,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.89564075286944, 30.262015141945056],
+                  [78.89370956237872, 30.262089276444158],
+                  [78.89349498565753, 30.26316422039162],
+                  [78.89473953064044, 30.263053019839294],
+                  [78.89606990631182, 30.263349554365657],
+                  [78.89714278991778, 30.26316422039162],
+                  [78.89976851716847, 30.26231849549475],
+                  [78.90131346956105, 30.261799554037143],
+                  [78.90135638490528, 30.26231849549475],
+                  [78.90097014680714, 30.263133969387365],
+                  [78.90011183992237, 30.263504637099846],
+                  [78.89925353303761, 30.263133969387365],
+                  [78.8985668875298, 30.263652903793044],
+                  [78.89788024202198, 30.26402356954659],
+                  [78.89680735841603, 30.263949436507815],
+                  [78.89418952241749, 30.26372703705568],
+                  [78.8930737234673, 30.26346757039156],
+                  [78.89410369172901, 30.262874501156126],
+                  [78.89328830018849, 30.261651284545568],
+                  [78.89260165468067, 30.260465120553693],
+                  [78.89273040071339, 30.25950135176081],
+                  [78.89221541658253, 30.257907405693864],
+                  [78.8934170462212, 30.258055680837874],
+                  [78.89491908326954, 30.257351371910104],
+                  [78.89526240602345, 30.256684127214474],
+                  [78.8948761679253, 30.2559056693405],
+                  [78.89620654359669, 30.25575739095072],
+                  [78.89685027376026, 30.25623929489911],
+                  [78.89620654359669, 30.257128957515217],
+                  [78.89551989808888, 30.25812981832594],
+                  [78.89427535310597, 30.2587970532002],
+                  [78.89479033723683, 30.260020305362996],
+                  [78.89569155946583, 30.26042805269809],
+                  [78.89616362825245, 30.259983237339515],
+                  [78.89680735841603, 30.258834121671427],
+                  [78.89719359651417, 30.25787033687288],
+                  [78.89788024202198, 30.257203095702796],
+                  [78.89839522615284, 30.257647923653163],
+                  [78.89818064943165, 30.258278093134184],
+                  [78.89775149598927, 30.258759984715002],
+                  [78.89706485048146, 30.259983237339515],
+                  [78.89685027376026, 30.26053925622291],
+                  [78.89650695100636, 30.261132339562046],
+                  [78.89582030549855, 30.261873688698994],
+                  [78.8948761679253, 30.262503831065022]]]),
+            {
+              "class": 1,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.87317598123616, 30.21359137665386],
+                  [78.87373388071126, 30.213294691976234],
+                  [78.87480676431721, 30.21316489214846],
+                  [78.87592256326741, 30.212886749083793],
+                  [78.8766950394637, 30.21305363501694],
+                  [78.87652337808674, 30.213832432295714],
+                  [78.87633025903767, 30.214388712292067],
+                  [78.87605130930012, 30.214796648957133],
+                  [78.87562215585774, 30.214499967913913],
+                  [78.87463510294026, 30.21424037126722],
+                  [78.87360513467854, 30.213999316624843]]]),
+            {
+              "class": 1,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.25139651766085, 30.35355251290395],
+                  [79.252683977988, 30.354441292795475],
+                  [79.2530273007419, 30.356366954862207],
+                  [79.25568805208468, 30.358773979143027],
+                  [79.25534472933077, 30.359329437873818],
+                  [79.25452933779025, 30.36036628573212],
+                  [79.25294147005343, 30.360329255640718],
+                  [79.25169692507052, 30.358588825531857]]]),
+            {
+              "class": 1,
+              "system:index": "7"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.26173911562228, 30.359477559669347],
+                  [79.26268325319552, 30.356218828356592],
+                  [79.26379905214571, 30.356515081143513],
+                  [79.26491485109591, 30.357218677916897],
+                  [79.2668031262424, 30.358144455435134],
+                  [79.26821933260226, 30.359588650868783],
+                  [79.2680476712253, 30.361551241254965],
+                  [79.26787600984835, 30.362699153227986],
+                  [79.26645980348849, 30.36358785001879],
+                  [79.26362739076876, 30.363180531658745],
+                  [79.26238284578585, 30.36184747789261]]]),
+            {
+              "class": 1,
+              "system:index": "8"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.2737674960814, 30.36303058838375],
+                  [79.27509787175279, 30.3616605029865],
+                  [79.27685740086656, 30.362067827676913],
+                  [79.28067686650377, 30.36299355930102],
+                  [79.2769003162108, 30.362438121378023],
+                  [79.27642824742418, 30.363845224656398],
+                  [79.27621367070299, 30.36536339233066]]]),
+            {
+              "class": 1,
+              "system:index": "9"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[76.40056630527272, 31.378253026863725],
+                  [76.40073796664967, 31.377666802470447],
+                  [76.4009954587151, 31.37726377107813],
+                  [76.40159627353444, 31.376970656252308],
+                  [76.40181085025563, 31.377630163324408],
+                  [76.40129586612477, 31.377630163324408],
+                  [76.4009954587151, 31.378143110068606],
+                  [76.40030881320729, 31.37913235659482],
+                  [76.39962216769948, 31.378949163579588]]]),
+            {
+              "class": 1,
+              "system:index": "10"
+            })]),
+    un_burn = 
+    /* color: #0b4a8b */
+    /* shown: false */
+    /* locked: true */
+    ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.78060865027737, 29.579326863205083],
+                  [78.7548594437344, 29.569473289822415],
+                  [78.74112653357815, 29.566188551671416],
+                  [78.73357343299222, 29.576639620382572],
+                  [78.71984052283597, 29.58290974235647],
+                  [78.70645093543362, 29.595448817747993],
+                  [78.70233106238675, 29.595448817747993],
+                  [78.72602033240628, 29.570966317299714],
+                  [78.73975324256253, 29.55573640138799],
+                  [78.76721906287503, 29.560216026788904],
+                  [78.78575849158597, 29.573056518681565],
+                  [78.80498456580472, 29.577833959357246],
+                  [78.82867383582425, 29.586791051246294],
+                  [78.84961652381253, 29.591866383783046],
+                  [78.85545301062893, 29.596941461020442],
+                  [78.84309339148831, 29.60291181323282],
+                  [78.83794355017972, 29.603807335581834]]]),
+            {
+              "class": 0,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.84770412562295, 29.55769858043861],
+                  [78.87825985072061, 29.549336244019855],
+                  [78.89096279261514, 29.559191781974913],
+                  [78.87722988245889, 29.572331003772568],
+                  [78.85525722620889, 29.572629602583415]]]),
+            {
+              "class": 0,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.11258116255988, 29.53197395220274],
+                  [79.11120787154425, 29.537649444894395],
+                  [79.10365477095831, 29.534961093324643]]]),
+            {
+              "class": 0,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.07618895064581, 29.508073647464],
+                  [79.07172575484503, 29.516738160203595],
+                  [79.06348600875128, 29.51404925286537]]]),
+            {
+              "class": 0,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.06927857493042, 29.363665900335764],
+                  [79.06138215159058, 29.362469035929248],
+                  [79.08026490305542, 29.323862619102815],
+                  [79.08850464914917, 29.326855887407568],
+                  [79.07305512522339, 29.35409059124852]]]),
+            {
+              "class": 0,
+              "system:index": "4"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.25432953928589, 29.31697776865044],
+                  [79.2601660261023, 29.316678416786427],
+                  [79.25398621653198, 29.364862750675655],
+                  [79.24574647043823, 29.363965114239477]]]),
+            {
+              "class": 0,
+              "system:index": "5"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.92203294575484, 30.45203038517871],
+                  [79.94537889302046, 30.38334286564297],
+                  [79.94949876606734, 30.393412162954824],
+                  [79.91653978169234, 30.506472297698725],
+                  [79.90830003559859, 30.504697498239675]]]),
+            {
+              "class": 0,
+              "system:index": "6"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.02854750481299, 30.511427955350772],
+                  [79.04777357903174, 30.487762505459948],
+                  [79.03678725090674, 30.524441498181666]]]),
+            {
+              "class": 0,
+              "system:index": "7"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[78.84630327483717, 30.24579806919981],
+                  [78.84808426162306, 30.24603904589707],
+                  [78.85312681457106, 30.24622441218516],
+                  [78.85540132781568, 30.246076119182668],
+                  [78.85529403945509, 30.246650753320697],
+                  [78.85512237807814, 30.247114165500303],
+                  [78.85465030929151, 30.247336602570208],
+                  [78.85334139129225, 30.24731806616694],
+                  [78.85175352355543, 30.247336602570208],
+                  [78.84939317962233, 30.247280993349932],
+                  [78.84795551559034, 30.24709562905508]]]),
+            {
+              "class": 0,
+              "system:index": "8"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[80.38800460054608, 28.82058234799227],
+                  [80.40105086519452, 28.820431949589807],
+                  [80.41014891817304, 28.82614693617145],
+                  [80.40757399751874, 28.831410462069016],
+                  [80.4051707382414, 28.837124845970745],
+                  [80.39658766939374, 28.836372971278518],
+                  [80.38937789156171, 28.832613516332916]]]),
+            {
+              "class": 0,
+              "system:index": "9"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[79.19103552928709, 30.050052104631156],
+                  [79.20751502147459, 30.051240802114396],
+                  [79.21266486278319, 30.059561284985392],
+                  [79.21129157176756, 30.065504058943638],
+                  [79.20373847118162, 30.070258021222102],
+                  [79.19927527538084, 30.070258021222102],
+                  [79.19446875682615, 30.063126992172972]]]),
+            {
+              "class": 0,
+              "system:index": "10"
+            })]),
+    MCD64A1 = ee.ImageCollection("MODIS/006/MCD64A1");
+
+
+
+
+
+// Load the Landsat 8 scaled radiance image collection.
+var pre_fire = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
+                          .filterDate('2018-11-20', '2019-01-09') 
+                          .filterBounds (table)
+                          .sort('CLOUD_COVER', true)
+                          .median();
+  print (pre_fire, 'pre_fire_landsatCollection');
+
+// Load the Landsat 8 scaled radiance image collection.
+var post_fire = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
+                          .filterDate('2019-05-28', '2019-06-10') 
+                          .filterBounds (table)
+                          .sort('CLOUD_COVER', true)
+                          .median();
+  print (post_fire, 'post_fire_landsatCollection');
+
+//var mask = require('users/fitoprincipe/geetools:cloud_masks');
+//print(mask.help['landsatSR']);
+//var mask_function = mask.landsatT1(); // mask function
+//var col_free = post_fire.map(mask_function) // apply function to collection
+//var composite_free = col_free.max() // create composite using max
+var composite_pre = pre_fire.clip(table);
+print(composite_pre, 'composite_pre');
+var composite_post = post_fire.clip(table);
+print(composite_post, 'composite_post');
+Map.addLayer(composite_pre, {bands: ['B7', 'B5', 'B2'], max: 2000,min: 500}, 'composite_pre');
+Map.addLayer(composite_post, {bands: ['B7', 'B5', 'B2'], max: 2000,min: 500}, 'composite_post');
+
+
+//-----------------------------------------------------------------------\\
+////////////////////// Normalized Burn ration /////////////////////
+print('--------- Normalized Burn Ratio ------------');
+var Prefire_NBR = composite_pre.normalizedDifference(['B5','B7']);
+var Postfire_NBR = composite_post.normalizedDifference(['B5','B7']);
+print(Prefire_NBR, 'Prefire_NBR');
+print(Postfire_NBR, 'Postfire_NBR');
+/////////////////////////////// VIsualization //////////////////
+var palettes = require('users/gena/packages:palettes');
+var palette = palettes.misc.coolwarm[7].reverse();
+//Map.addLayer(Prefire_NBR,{min: -1, max: 1, palette: palette},"Pre_nbr" );
+//Map.addLayer(Postfire_NBR,{min: -1, max: 1, palette:palette},"Post_nbr" );
+////////////////////// Normalized Differance Vegetation Index /////////////////////
+print('--------- Normalized Vegetation Index------------');
+var Prefire_NDVI = composite_pre.normalizedDifference(['B5','B4']);
+var Postfire_NDVI = composite_post.normalizedDifference(['B5','B4']);
+print(Prefire_NDVI, 'Prefire_NDVI');
+print(Postfire_NDVI, 'Postfire_NDVI');
+print('--------- Normalized Water Index------------');
+var Prefire_NDWI = composite_pre.normalizedDifference(['B5','B6']);
+var Postfire_NDWI = composite_post.normalizedDifference(['B5','B6']);
+print(Prefire_NDWI, 'Prefire_NDWI');
+print(Postfire_NDWI, 'Postfire_NDWI');
+
+////////////////// Delta Pre and Post Fire NBR//////////////////
+var dnbr = Prefire_NBR.subtract(Postfire_NBR);
+print(dnbr, 'Delta_NBR');
+//Map.addLayer(dnbr,{min: -0.2, max: 1, palette:palette.reverse()},"D_nbr" );
+////D NDVI//
+var dndvi = Prefire_NDVI.subtract(Postfire_NDVI);
+print(dndvi, 'Delta_NDVI');
+//Map.addLayer(dndvi,{min: -1, max: 1, palette:palette},"D_ndvi" );
+//// D_NDWI ////////////////
+var dndwi = Prefire_NDWI.subtract(Postfire_NDWI);
+print(dndwi, 'Delta_NDWI');
+//Map.addLayer(dndwi,{min: -1, max: 1, palette:palette},"D_ndwi" );
+
+//---------------------------------- D_SWIR-----------------------------------------------\\
+var d_swir = composite_pre.select('B7').subtract(composite_post.select('B7'));
+print(d_swir,'d_swir' );
+Map.addLayer(d_swir);
+////////// DNBR + DNDVI + DNDWI////////
+var DVIN = dnbr.addBands(dndvi).addBands(d_swir).addBands(dndwi).rename('Dnbr','Dndvi', 'd_swir', 'dndwi');
+print(DVIN, 'DDVIN');
+////////////////// Unsupervised Clustering #################
+// Make the training dataset.
+var training_cl = DVIN.sample({
+  region: geometry,
+  scale: 30,
+  numPixels: 5000
+});
+print(training_cl, 'training_cl');
+
+// train cluster on image
+var clusterer = ee.Clusterer.wekaKMeans(10).train(training_cl);
+print(clusterer);
+// cluster the complete image
+var result = DVIN.cluster(clusterer);
+print(result,'Cluster_Class' );
+// Display the clusters with random colors.
+Map.addLayer(result.randomVisualizer(), {}, 'clusters_Class');
+
+
+///-----------------------------------------------------------------------------------///
+////////// DNBR + DNDVI + DNDWI + DSWIR_Cluster////////
+var DVIN = DVIN.addBands(result).rename('Dnbr','Dndvi', 'd_swir', 'dndwi', 'cluster');
+print(DVIN, 'DDVIN');
+///--------------------------------- Random forest clasification -------------------///
+// Select the bands for training
+var bands = ['Dnbr','Dndvi', 'd_swir', 'dndwi', 'cluster'];
+///--------------------------------- Random forest clasification -------------------///
+// Merge points together
+var mrgSign = burn.merge(un_burn);
+print(mrgSign, 'Sign');
+
+// Get the values for all pixels in each polygon in the training.
+var training_rf = DVIN.sampleRegions({
+  // Get the sample from the polygons FeatureCollection.
+  collection: mrgSign,
+  // Keep this list of properties from the polygons.
+  properties: ['class'],
+  // Set the scale to get Landsat pixels in the polygons.
+  scale: 30
+});
+print(training_rf, 'training_rf');
+
+// Make a Random Forest classifier and train it.
+var RF_classifier = ee.Classifier.randomForest(100).train({
+  features: training_rf,
+  classProperty: 'class',
+  inputProperties: bands
+});
+print(RF_classifier, 'RF_classifier');
+//print('Feature_Impo',RF_classifier.explain()); 
+// Classify the input imagery.
+var RF_classified = DVIN.classify(RF_classifier);
+print(RF_classified, 'RF_classified');
+
+// Display the classification result and the input image.
+
+Map.addLayer(RF_classified, {min: 0, max: 1, palette:[ 'white','red']},'RF_Forest fire Patches');
+
+// Get a confusion matrix representing resubstitution accuracy.
+var trainAccuracy = RF_classifier.confusionMatrix();
+var OA = trainAccuracy.accuracy();
+var CA = trainAccuracy.consumersAccuracy();
+var Kappa = trainAccuracy.kappa();
+var Order = trainAccuracy.order();
+var PA = trainAccuracy.producersAccuracy();
+print(trainAccuracy,'RF Confusion Matrix');
+print(OA,'RF Overall Accuracy');
+print(CA,'Consumers Accuracy');
+print(Kappa,'Kappa');
+print(Order,'Order');
+print(PA,'Producers Accuracy');
+
+print('---------------------RF Successfully Complete-----------------------');
+//----------------------------------SVM ----------------------------------///-
+// Create an SVM classifier with custom parameters.
+var SVM_classifier = ee.Classifier.svm({
+  kernelType: 'RBF',
+  gamma: 0.5,
+  cost: 10
+});
+// Train the classifier.
+var svm_trained = SVM_classifier.train(training_rf, 'class', bands);
+
+// Classify the image.
+var SVM_classified = DVIN.classify(svm_trained);
+
+// Display the classification result and the input image.
+
+Map.addLayer(SVM_classified, {min: 0, max: 1, palette:[ 'white','black']},'SVM_Forest fire Patches');
+
+// Get a confusion matrix representing resubstitution accuracy.
+var trainAccuracy = svm_trained.confusionMatrix();
+var OA = trainAccuracy.accuracy();
+var CA = trainAccuracy.consumersAccuracy();
+var Kappa = trainAccuracy.kappa();
+var Order = trainAccuracy.order();
+var PA = trainAccuracy.producersAccuracy();
+print(trainAccuracy,'SVM Confusion Matrix');
+print(OA,'SVM Overall Accuracy');
+print(CA,'Consumers Accuracy');
+print(Kappa,'Kappa');
+print(Order,'Order');
+print(PA,'Producers Accuracy');
+print('---------------------SVM Successfully Complete-----------------------');
+print('--------------------- CART classification----------------------------');
+// Overlay the points on the imagery to get training.
+var training_cart = DVIN.sampleRegions({
+  collection: mrgSign,
+  properties: ['class'],
+  scale: 30
+});
+print(training_cart, 'training_cart');
+// Train a CART classifier with default parameters.
+var cart_trained = ee.Classifier.cart(100).train(training_cart, 'class', bands);
+// Classify the image with the same bands used for training.
+var cart_classified = DVIN.select(bands).classify(cart_trained);
+Map.addLayer(cart_classified, {min: 0, max: 1, palette:[ 'white','black']},'CART_Forest fire Patches');
+
+// Get a confusion matrix representing resubstitution accuracy.
+var trainAccuracy = cart_trained.confusionMatrix();
+var OA = trainAccuracy.accuracy();
+var CA = trainAccuracy.consumersAccuracy();
+var Kappa = trainAccuracy.kappa();
+var Order = trainAccuracy.order();
+var PA = trainAccuracy.producersAccuracy();
+print(trainAccuracy,'CART Confusion Matrix');
+print(OA,'CART Overall Accuracy');
+print(CA,'Consumers Accuracy');
+print(Kappa,'Kappa');
+print(Order,'Order');
+print(PA,'Producers Accuracy');
+
+print('--------------------- CART Complete----------------------------');
+
+
+//-------------------- Export Outputs to Drive---------------------------------------//
+        //-------------------- Export RF out_Put -----------------------//
+        
+Export.image.toDrive({
+  image:RF_classified ,
+  description: 'RF_Fire_2019',
+  scale: 30,
+  fileFormat: 'GeoTIFF',
+  region: table,
+  maxPixels: 340733952 ,
+  formatOptions: {
+    cloudOptimized: true
+  }
+});
+
+     //-------------------- Export SVM out_Put -----------------------//
+Export.image.toDrive({
+  image:SVM_classified ,
+  description: 'SVM_Fire_2019',
+  scale: 30,
+  fileFormat: 'GeoTIFF',
+  region: table,
+  maxPixels: 340733952 ,
+  formatOptions: {
+    cloudOptimized: true
+  }
+});
+
+     //-------------------- Export SVM out_Put -----------------------//
+Export.image.toDrive({
+  image:cart_classified ,
+  description: 'CART_Fire_2019',
+  scale: 30,
+  fileFormat: 'GeoTIFF',
+  region: table,
+  maxPixels: 340733952 ,
+  formatOptions: {
+    cloudOptimized: true
+  }
+});
+print('Complete Successfully')
+//------------------------------ Thank You-----------------------------------------//
+
+// Load the Landsat 8 scaled radiance image collection.
+var pre_fire = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
+                          .filterDate('2017-12-20', '2018-01-09') 
+                          .filterBounds (table)
+                          .sort('CLOUD_COVER', true)
+                          .median();
+  print (pre_fire, 'pre_fire_landsatCollection_2018');
+  
+
+var getQABits = function(image, start, end, newName) {
+    // Compute the bits we need to extract.
+    var pattern = 0;
+    for (var i = start; i <= end; i++) {
+       pattern += Math.pow(2, i);
+    }
+    // Return a single band image of the extracted QA bits, giving the band
+    // a new name.
+    return image.select([0], [newName])
+                  .bitwiseAnd(pattern)
+                  .rightShift(start);
+};
+
+// A function to mask out cloudy pixels.
+var cloud_shadows = function(image) {
+  // Select the QA band.
+  var QA = image.select(['pixel_qa']);
+  // Get the internal_cloud_algorithm_flag bit.
+  return getQABits(QA, 3,3, 'cloud_shadows').eq(0);
+  // Return an image masking out cloudy areas.
+};
+
+// A function to mask out cloudy pixels.
+var clouds = function(image) {
+  // Select the QA band.
+  var QA = image.select(['pixel_qa']);
+  // Get the internal_cloud_algorithm_flag bit.
+  return getQABits(QA, 5,5, 'Cloud').eq(0);
+  // Return an image masking out cloudy areas.
+};
+
+var maskClouds = function(image) {
+  var cs = cloud_shadows(image);
+  var c = clouds(image);
+  image = image.updateMask(cs);
+  return image.updateMask(c);
+};
+
+
+// Load the Landsat 8 scaled radiance image collection.
+var post_fire = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
+                          .filterDate('2018-06-10', '2018-06-22') 
+                          .filterBounds (table)
+                          .sort('CLOUD_COVER', true);
+var post_fire = post_fire.map(maskClouds);
+//var pos_fire = post_fire.median();
+print (post_fire, 'post_fire_landsatCollection_2018');
+
+
+//var mask = require('users/fitoprincipe/geetools:cloud_masks');
+//print(mask.help['landsatSR']);
+//var mask_function = mask.landsatT1(); // mask function
+//var col_free = post_fire.map(mask_function) // apply function to collection
+//var composite_free = col_free.max() // create composite using max
+var composite_pre = pre_fire.clip(table);
+print(composite_pre, 'composite_pre');
+//var composite_post = post_fire.clip(table);
+var composite_post = post_fire.map(function(post_fire) { return post_fire.clip(table); }); /// clip over number of sceneprint(composite_post, 'composite_post');
+var composite_post = composite_post.median()
+Map.addLayer(composite_pre, {bands: ['B7', 'B5', 'B2'], max: 2500,min: 500}, 'composite_pre');
+Map.addLayer(composite_post, {bands: ['B7', 'B5', 'B2'], max: 2500,min: 500}, 'composite_post');
+
+
+//-----------------------------------------------------------------------\\
+////////////////////// Normalized Burn ration /////////////////////
+print('--------- Normalized Burn Ratio ------------');
+var Prefire_NBR = composite_pre.normalizedDifference(['B5','B7']);
+var Postfire_NBR = composite_post.normalizedDifference(['B5','B7']);
+print(Prefire_NBR, 'Prefire_NBR');
+print(Postfire_NBR, 'Postfire_NBR');
+/////////////////////////////// VIsualization //////////////////
+var palettes = require('users/gena/packages:palettes');
+var palette = palettes.misc.coolwarm[7].reverse();
+Map.addLayer(Prefire_NBR,{min: -1, max: 1, palette: palette},"Pre_nbr" );
+Map.addLayer(Postfire_NBR,{min: -1, max: 1, palette:palette},"Post_nbr" );
+////////////////////// Normalized Differance Vegetation Index /////////////////////
+print('--------- Normalized Vegetation Index------------');
+var Prefire_NDVI = composite_pre.normalizedDifference(['B5','B4']);
+var Postfire_NDVI = composite_post.normalizedDifference(['B5','B4']);
+print(Prefire_NDVI, 'Prefire_NDVI');
+print(Postfire_NDVI, 'Postfire_NDVI');
+
+print('--------- Normalized Water Index------------')
+var Prefire_NDWI = composite_pre.normalizedDifference(['B3','B5']);
+var Postfire_NDWI = composite_post.normalizedDifference(['B3','B5']);
+print(Prefire_NDWI, 'Prefire_NDWI');
+print(Postfire_NDWI, 'Postfire_NDWI');
+//--------------------------------------------------------\\
+////////////////// Delta_NBR//////////////////
+var dnbr = Prefire_NBR.subtract(Postfire_NBR);
+print(dnbr, 'Delta_NBR');
+//Map.addLayer(dnbr,{min: -0.2, max: 1, palette:palette.reverse()},"D_nbr" );
+////D NDVI//
+var dndvi = Prefire_NDVI.subtract(Postfire_NDVI);
+print(dndvi, 'Delta_NDVI');
+//Map.addLayer(dndvi,{min: -1, max: 1, palette:palette},"D_ndvi" );
+var dndwi = Prefire_NDWI.subtract(Postfire_NDWI);
+print(dndwi, 'Delta_NDWI');
+//Map.addLayer(dndwi,{min: -1, max: 1, palette:palette},"D_ndwi" );
+//---------------------------------- D_SWIR-----------------------------------------------\\
+var d_swir = composite_pre.select('B7').subtract(composite_post.select('B7'));
+print(d_swir,'d_swir' );
+Map.addLayer(d_swir);
+
+////////// DNBR + DNDVI + DNDWI + DNDWI////////
+var DVIN = dnbr.addBands(dndvi).addBands(d_swir).addBands(dndwi).rename('Dnbr','Dndvi', 'd_swir', 'dndwi');
+print(DVIN, 'DDVIN');
+////////////////// Unsupervised Clustering #################
+// Make the training dataset.
+var training_cl = DVIN.sample({
+  region: table,
+  scale: 30,
+  numPixels: 5000
+});
+print(training_cl, 'training_cl');
+
+// train cluster on image
+var clusterer = ee.Clusterer.wekaKMeans(10).train(training_cl);
+print(clusterer);
+// cluster the complete image
+var result = DVIN.cluster(clusterer);
+print(result,'Cluster_Class' );
+// Display the clusters with random colors.
+Map.addLayer(result.randomVisualizer(), {}, 'clusters_Class');
+
+
+///-----------------------------------------------------------------------------------///
+////////// DNBR + DNDVI + DNDWI + DSWIR_Cluster////////
+var DVIN = DVIN.addBands(result).rename('Dnbr','Dndvi', 'd_swir', 'dndwi', 'cluster');
+print(DVIN, 'DDVIN');
+///--------------------------------- Random forest clasification -------------------///
+// Select the bands for training
+var bands = ['Dnbr','Dndvi', 'd_swir', 'dndwi', 'cluster'];
+///--------------------------------- Random forest clasification -------------------///
+
+// Make a Random Forest classifier and train it.
+var RF_classifier = ee.Classifier.randomForest(100).train({
+  features: training_rf,
+  classProperty: 'class',
+  inputProperties: bands
+});
+print(RF_classifier, 'RF_classifier');
+// Classify the input imagery.
+var RF_classified = DVIN.classify(RF_classifier);
+print(RF_classified, 'RF_classified');
+
+// Display the classification result and the input image.
+
+Map.addLayer(RF_classified, {min: 0, max: 1, palette:[ 'white','red']},'RF_Forest fire Patches');
+
+// Get a confusion matrix representing resubstitution accuracy.
+var trainAccuracy = RF_classifier.confusionMatrix();
+var OA = trainAccuracy.accuracy();
+var CA = trainAccuracy.consumersAccuracy();
+var Kappa = trainAccuracy.kappa();
+var Order = trainAccuracy.order();
+var PA = trainAccuracy.producersAccuracy();
+print(trainAccuracy,'RF Confusion Matrix');
+print(OA,'RF Overall Accuracy');
+print(CA,'Consumers Accuracy');
+print(Kappa,'Kappa');
+print(Order,'Order');
+print(PA,'Producers Accuracy');
+
+print('---------------------RF Successfully Complete-----------------------');
+//----------------------------------SVM ----------------------------------///-
+// Create an SVM classifier with custom parameters.
+var SVM_classifier = ee.Classifier.svm({
+  kernelType: 'RBF',
+  gamma: 0.5,
+  cost: 10
+});
+// Train the classifier.
+var svm_trained = SVM_classifier.train(training_rf, 'class', bands);
+
+// Classify the image.
+var SVM_classified = DVIN.classify(svm_trained);
+
+// Display the classification result and the input image.
+
+Map.addLayer(SVM_classified, {min: 0, max: 1, palette:[ 'white','black']},'SVM_Forest fire Patches');
+
+// Get a confusion matrix representing resubstitution accuracy.
+var trainAccuracy = svm_trained.confusionMatrix();
+var OA = trainAccuracy.accuracy();
+var CA = trainAccuracy.consumersAccuracy();
+var Kappa = trainAccuracy.kappa();
+var Order = trainAccuracy.order();
+var PA = trainAccuracy.producersAccuracy();
+print(trainAccuracy,'SVM Confusion Matrix');
+print(OA,'SVM Overall Accuracy');
+print(CA,'Consumers Accuracy');
+print(Kappa,'Kappa');
+print(Order,'Order');
+print(PA,'Producers Accuracy');
+print('---------------------SVM Successfully Complete-----------------------');
+print('--------------------- CART classification----------------------------');
+// Overlay the points on the imagery to get training.
+var training_cart = DVIN.sampleRegions({
+  collection: mrgSign,
+  properties: ['class'],
+  scale: 30
+});
+print(training_cart, 'training_cart');
+// Train a CART classifier with default parameters.
+var cart_trained = ee.Classifier.cart(100).train(training_cart, 'class', bands);
+// Classify the image with the same bands used for training.
+var cart_classified = DVIN.select(bands).classify(cart_trained);
+Map.addLayer(cart_classified, {min: 0, max: 1, palette:[ 'white','black']},'CART_Forest fire Patches');
+
+// Get a confusion matrix representing resubstitution accuracy.
+var trainAccuracy = cart_trained.confusionMatrix();
+var OA = trainAccuracy.accuracy();
+var CA = trainAccuracy.consumersAccuracy();
+var Kappa = trainAccuracy.kappa();
+var Order = trainAccuracy.order();
+var PA = trainAccuracy.producersAccuracy();
+print(trainAccuracy,'CART Confusion Matrix');
+print(OA,'CART Overall Accuracy');
+print(CA,'Consumers Accuracy');
+print(Kappa,'Kappa');
+print(Order,'Order');
+print(PA,'Producers Accuracy');
+
+print('--------------------- CART Complete----------------------------');
+//-------------------- Export Outputs to Drive---------------------------------------//
+        //-------------------- Export RF out_Put -----------------------//
+        
+Export.image.toDrive({
+  image:RF_classified ,
+  description: 'RF_Fire',
+  scale: 30,
+  fileFormat: 'GeoTIFF',
+  region: table,
+  maxPixels: 340733952 ,
+  formatOptions: {
+    cloudOptimized: true
+  }
+});
+
+     //-------------------- Export SVM out_Put -----------------------//
+Export.image.toDrive({
+  image:SVM_classified ,
+  description: 'SVM_Fire',
+  scale: 30,
+  fileFormat: 'GeoTIFF',
+  region: table,
+  maxPixels: 340733952 ,
+  formatOptions: {
+    cloudOptimized: true
+  }
+});
+
+       //-------------------- Export SVM out_Put -----------------------//
+Export.image.toDrive({
+  image:cart_classified ,
+  description: 'CART_Fire',
+  scale: 30,
+  fileFormat: 'GeoTIFF',
+  region: table,
+  maxPixels: 340733952 ,
+  formatOptions: {
+    cloudOptimized: true
+  }
+});
+print('//--------------Complete Successfully-------------------//')
+//------------------------------ Thank You-----------------------------------------//
+
+//---------------------------------------- MCD64A1 ------------------------------------//
+
+var MCD = MCD64A1.filterDate('2018-02-22', '2018-05-25')
+                         .filterBounds(table);
+                         //.map(maskS2clouds);
+print(MCD , 'MCD', MCD.size());
+
+Map.addLayer(MCD);
+//////////////////////////////////////////////////////////////////////////////////
+

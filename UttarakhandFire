@@ -1,7 +1,7 @@
 // Forest fire patches identification using multi-spectral remote sensing (Landsat and Sentinel2) data in Google Earth engine JavaScript platform. 
 
 
-var imageCollection = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR"),
+var imageCollection = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR"), 
     geometry = 
     /* color: #ffc82d */
     /* shown: false */
